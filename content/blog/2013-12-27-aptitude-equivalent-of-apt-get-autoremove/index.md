@@ -1,7 +1,7 @@
 ---
 title: "Aptitude equivalent of 'apt-get autoremove'"
 date: "2013-12-27"
-# Head: "2013"
+Head: "2013"
 tags:
 - technology
 ---
