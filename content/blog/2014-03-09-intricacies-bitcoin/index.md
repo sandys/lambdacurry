@@ -1,7 +1,7 @@
 ---
 title: "The intricacies of Bitcoin"
 date: "2014-03-09"
-Head: "2014"
+# Head: "2014"
 tags:
 - technology
 ---

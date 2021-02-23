@@ -1,7 +1,7 @@
 ---
 title: "Quick and dirty NoSQL cheatsheet"
 date: "2013-10-13"
-Head: "2013"
+# Head: "2013"
 tags:
 - technology
 ---
