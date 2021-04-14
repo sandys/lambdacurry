@@ -6,6 +6,7 @@ import { scale } from "../utils/typography"
 
 import Footer from "./footer"
 import "./global.css"
+import { filteredYears } from "../utils/filteredYears"
 
 const Layout = ({ location, title, children }) => {
   const data = useStaticQuery(graphql`
@@ -13,16 +14,19 @@ const Layout = ({ location, title, children }) => {
         allMarkdownRemark{
         edges {
           node {
-            frontmatter {
-              Head
-            }
+            excerpt
+             fields {
+               slug
+             }
           }
         }
       }
     }
   `);
-  const HeadData = data.allMarkdownRemark.edges
-  console.table(HeadData.node);
+
+  const allYears = filteredYears(data.allMarkdownRemark.edges);
+
+  allYears.sort((a, b) => (a > b ? -1 : 1));
 
   const toggle = (
     <ThemeToggler>
@@ -95,16 +99,9 @@ const Layout = ({ location, title, children }) => {
             </div>
             <div className="toggle-2">
               <ul>
-                <li onClick={() => navigate('/#2013')}>2013</li>
-                <li onClick={() => navigate('/#2012')}>2012</li>
-                <li onClick={() => navigate('/#2011')}>2011</li>
-                <li onClick={() => navigate('/#2010')}>2010</li>
-                <li onClick={() => navigate('/#2009')}>2009</li>
-                <li onClick={() => navigate('/#2008')}>2008</li>
-                <li onClick={() => navigate('/#2007')}>2007</li>
-                <li onClick={() => navigate('/#2006')}>2006</li>
-                <li onClick={() => navigate('/#2005')}>2005</li>
-                <li onClick={() => navigate('/#2004')}>2004</li>
+                {allYears.map(year => (
+                  <li key={year} onClick={() => navigate(`/#${year}`)}>{year}</li>
+                ))}
               </ul>
               </div>
           </div>
