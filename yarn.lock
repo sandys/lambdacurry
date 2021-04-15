@@ -13891,6 +13891,11 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
+typeface-arimo@1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/typeface-arimo/-/typeface-arimo-1.1.13.tgz#e6d21477df1db5f2d912505e6979e18a86e8a2f6"
+  integrity sha512-OhkxAAd/xejNWbizVdPyjs9UIRm+9oSBK5jsO/Xqv3bPD9hgzPZkKoFEbCNDmI07tXdiNhd5OJlrpL3De4kOCA==
+
 typeface-merriweather@0.0.72:
   version "0.0.72"
   resolved "https://registry.yarnpkg.com/typeface-merriweather/-/typeface-merriweather-0.0.72.tgz#2b990f5293252052d51d170c82d3892319ff0555"

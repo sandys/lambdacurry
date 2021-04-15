@@ -55,22 +55,29 @@ const BlogIndex = ({
       <div className="fragments fragments-separator" />
       <br />
       <p style={{ fontSize: '14px', fontWeight: 'bold' }}>{data.site.siteMetadata.description}</p>
-      {allYears.map(year => {
-        const nodes:any = posts.filter(({node}: any) => year === node.fields.slug.split("-")[0].replace(/\\|\//g,''));
+      {allYears.map((year, i) => {
+        const nodes:any = posts.filter(({node}: any) => 
+          year === node.fields.slug
+            .split("/")[2]
+            .split("-")[0]
+            .replace(/\\|\//g,'')
+          );
         
-        return (
-          <>
+          
+          return (
+            <>
             <h4 
+              key={year}
               id={year} 
               style={{ fontFamily: 'sans-serif', marginBottom: '10px', letterSpacing: '0px' }}
-            > 
+              > 
               {year}
             </h4>
-            {nodes.map(({node}) => {
+            {nodes.map(({node}, i) => {
               const title = node.frontmatter.title || node.fields.slug;
-
+              
               return (
-                  <React.Fragment>
+                  <>
                     <article id={node.fields.slug} key={node.fields.slug}>
                       <div>
                         <Link className="blog-links" style={{ boxShadow: `none`, fontWeight: 300, }} to={node.fields.slug}>
@@ -79,7 +86,7 @@ const BlogIndex = ({
                         <small className="date-blogs" style={{ color: '#b9b7b7', fontFamily: 'sans-serif', fontWeight: 400, textDecoration: 'none' }}><i>{node.frontmatter.date}</i></small>
                       </div>
                     </article>
-                  </React.Fragment>
+                  </>
                 )
             })}
           </>
