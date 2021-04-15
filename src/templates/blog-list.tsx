@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import PostFooter from '../components/postFooter'
 import { rhythm } from "../utils/typography"
 import '../components/global.css'
+import { filteredYears } from "../utils/filteredYears";
 
 type PageContext = {
   currentPage: number
@@ -41,41 +42,49 @@ const BlogIndex = ({
   location,
   pageContext,
 }: PageProps<Data>) => {
-  // const siteTitle = data.allMarkdownRemark.edges.node
   const posts = data.allMarkdownRemark.edges;
   const sTitle = data.site.siteMetadata.title;
+  
+  const allYears = filteredYears(posts);
 
   return (
     <Layout location={location} title={sTitle}>
       <SEO title="All posts" />
-      <h1 className="list-head"> {sTitle} </h1>
+      <h1 className="list-head"> {sTitle}</h1>
       <br />
       <div className="fragments fragments-separator" />
       <br />
-      <p style={{ fontSize: '14px', fontWeight: '100' }}>{data.site.siteMetadata.description}</p>
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug;
+      <p style={{ fontSize: '14px', fontWeight: 'bold' }}>{data.site.siteMetadata.description}</p>
+      {allYears.map(year => {
+        const nodes:any = posts.filter(({node}: any) => year === node.fields.slug.split("-")[0].replace(/\\|\//g,''));
+        
         return (
-          <React.Fragment>
-            <h4 id={node.frontmatter.Head} style={{ fontFamily: 'sans-serif', marginBottom: '60px', letterSpacing: '0px' }}> {node.frontmatter.Head ? node.frontmatter.Head : ''} </h4>
-            <article id={node.fields.slug} key={node.fields.slug}>
+          <>
+            <h4 
+              id={year} 
+              style={{ fontFamily: 'sans-serif', marginBottom: '10px', letterSpacing: '0px' }}
+            > 
+              {year}
+            </h4>
+            {nodes.map(({node}) => {
+              const title = node.frontmatter.title || node.fields.slug;
 
-              <div
-                style={{
-                  marginTop: '-50px',
-
-                }}
-              >
-                <Link className="blog-links" style={{ boxShadow: `none`, fontWeight: 300, }} to={node.fields.slug}>
-                  {title}
-                </Link>
-                <small className="date-blogs" style={{ color: '#b9b7b7', fontFamily: 'sans-serif', fontWeight: 400, textDecoration: 'none' }}><i>{node.frontmatter.date}</i></small>
-              </div>
-            </article>
-          </React.Fragment>
+              return (
+                  <React.Fragment>
+                    <article id={node.fields.slug} key={node.fields.slug}>
+                      <div>
+                        <Link className="blog-links" style={{ boxShadow: `none`, fontWeight: 300, }} to={node.fields.slug}>
+                          {title}
+                        </Link>
+                        <small className="date-blogs" style={{ color: '#b9b7b7', fontFamily: 'sans-serif', fontWeight: 400, textDecoration: 'none' }}><i>{node.frontmatter.date}</i></small>
+                      </div>
+                    </article>
+                  </React.Fragment>
+                )
+            })}
+          </>
         )
       })}
-
       <PostFooter />
     </Layout>
   )
