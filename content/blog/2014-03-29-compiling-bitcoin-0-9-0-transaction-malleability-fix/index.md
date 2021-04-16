@@ -9,7 +9,8 @@ tags:
 I had a bit of trouble compiling Bitcoin 0.9.0 (which contains the all important "transaction malleability" fix). So I'm posting here for the benefit of everyone. This is done on an Ubuntu 12.04 machine - which is relevant only for the system packages (if you're on any other machine just ask around for what are the **equivalent** packages)
 
 
-```git clone https://github.com/bitcoin/bitcoin.git
+```
+git clone https://github.com/bitcoin/bitcoin.git
 
 cd bitcoin
 
@@ -23,7 +24,8 @@ mkdir $PWD/release #I dont want to install bitcoin systemwide, so I make a local
 
 make
 
-make install```
+make install
+```
 
 
 
