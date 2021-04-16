@@ -35,7 +35,7 @@ module.exports = {
         name: `assets`,
       },
     },
-    
+
     // {
     //   resolve: `gatsby-source-filesystem`,
     //   options: {
@@ -60,7 +60,7 @@ module.exports = {
             },
           },
           {
-            resolve: "gatsby-remark-embed-gist",
+            resolve: `gatsby-remark-embed-gist`,
             options: {
               username: "sandys",
               includeDefaultCss: true || false,
