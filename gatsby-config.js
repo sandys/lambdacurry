@@ -7,13 +7,14 @@ module.exports = {
       summary: `Fintech. Startups. India`,
     },
     description: `Fintech. Startups. India`,
-    siteUrl: `https://lambdacurry.com`,
+    siteUrl: `https://www.lambdacurry.com`,
     social: {
       twitter: `sandeepssrin`,
     },
     defaultImage: "images/bg.jpeg",
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
