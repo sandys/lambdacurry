@@ -17,10 +17,10 @@ body {
 .toggle-2 {
   display: flex;
   flex-direction: column;
-  margin: 4%;
+  /* margin: 4%; */
   justify-content: center;
-  margin-left: 21%;
-  margin-bottom: 22%;
+  /* margin-left: 21%; */
+  /* margin-bottom: 22%; */
   font-family: sans-serif;
 }
 .toggle-1 {
@@ -211,7 +211,7 @@ button {
 @media only screen and (min-width: 768px) {
   .sidebar {
     height: 100vh;
-    width: 380px;
+    width: 230px;
   }
   .main-content {
     padding: 0 100px 0;
