@@ -26,3 +26,10 @@ Now the trick is this - the Signo and the Energel are both longer than the origi
 Cut the Signo/Energel a little bit longer, maybe a quarter of an inch. Because of the way they are both designed, the new refills need that extra length.
 
 The energel or the signo 207 refills cost rupees 50. The original waterman refills cost 1500 rs. 
+
+EDIT: **30 April 2023** - turns out that the Signo refills are good enough for the Mont Blanc Starwalker-style Fineliner (felt tip refills) or the Mont Blanc Rollerball. Both the Mont Blanc Fineliner and Rollerball refills are interchangeable anyhow. However, they have a screw threading. The Signo does NOT have a threaded refill. However, it doesnt stop it from fitting perfectly. The Signo refill may be a hair too short - so the way to do it is like in [this video](https://www.youtube.com/watch?v=MXqXiFWw9i8).
+1. First take an old mont blanc refill (or a thin eraser refill). and put either of them at the back of the mont blanc barrell
+2. take a very small piece of tape and roll it around the bottom portion of the tip. This is just to prevent the refill from wobbling since it doesnt have threads.
+3. cut the new Signo (or any G2 style refill) to account for the rubber/plastic you put in the back of the barrell
+4. thats it!
+It works and i daresay its MUCH MUCH better than the original mont blanc refill. The Signo 307 87-E refills are unbelievably good. And remember they are security refills (cannot be washed off)
